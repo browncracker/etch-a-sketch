@@ -3,14 +3,17 @@ let container = document.querySelector('#container');
 let gridBtn = document.querySelector('#gridSelector');
 //generate default grid
 generateGrid(16);
+startEtch();
 
 //set event listener for all squares
-let squares = document.querySelectorAll('.square');
-squares.forEach((square) => {
-    square.addEventListener('mouseover', () => {
-        square.setAttribute('style', 'background: black;');
+function startEtch() {
+    let squares = document.querySelectorAll('.square');
+    squares.forEach((square) => {
+        square.addEventListener('mouseover', () => {
+            square.setAttribute('style', 'background: black;');
+        });
     });
-});
+}
 
 //set event listener for button
 gridBtn.addEventListener('click', () => {
@@ -18,6 +21,7 @@ gridBtn.addEventListener('click', () => {
     if (newSize>=1 && newSize <=100) {
         clearGrid();
         generateGrid(newSize);
+        startEtch();
     } else {
         prompt('Enter grid size from 1-100 squares');
     }
