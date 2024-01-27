@@ -1,4 +1,6 @@
-let container = document.getElementById('#container');
+let container = document.querySelector('#container');
+let gridSize = document.querySelector('#gridSelector');
+generateGrid(16);
 
 function generateGrid(gridSize) {
     for (i = 0; i < gridSize; i++) {
@@ -11,4 +13,5 @@ function generateGrid(gridSize) {
         }
         container.appendChild(row);
     }
+    console.log('run');
 }
