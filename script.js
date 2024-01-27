@@ -1,6 +1,14 @@
 let container = document.querySelector('#container');
-let gridSize = document.querySelector('#gridSelector');
+let gridBtn = document.querySelector('#gridSelector');
 generateGrid(16);
+
+let squares = document.querySelectorAll('.square');
+
+squares.forEach((square) => {
+    square.addEventListener('mouseover', () => {
+        square.setAttribute('style', 'background: black;');
+    });
+});
 
 function generateGrid(gridSize) {
     for (i = 0; i < gridSize; i++) {
